@@ -29,5 +29,7 @@ that could never by an increasing word for any alphabet are
 removed. It contains a total of 67230 words.
 
 It can be download from
-[bit.ly/alphasoep](bit.ly/alphasoep "Link to the words"). A copy can
+[bit.ly/alphasoep](bit.ly/alphasoep "Link to the words"). A [copy][words] can
 be found in this repository.
+
+[words]: https://raw.github.com/dvberkel/letter-soup/master/words.txt
