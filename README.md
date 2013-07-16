@@ -11,3 +11,12 @@ problem. I.e.
 
 With the standard alphabet *ABCD...Z* an example of a increasing word
 is _ABBOT_.
+
+Observations
+------------
+
+Below are some characteristics of increasing words
+
+* *Same letters occur consecutively*. Proof: If in a word the
+   following letters occur, _..X...Y...X.._, then `X <= Y <= X`. Hence
+   `X == Y`.
