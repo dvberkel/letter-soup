@@ -32,4 +32,20 @@ It can be download from
 [bit.ly/alphasoep](bit.ly/alphasoep "Link to the words"). A [copy][words] can
 be found in this repository.
 
+Usage
+-----
+
+Use the following command to recreate the alphabet
+
+```shell
+cat words.txt | ./count-pairs.pl | ./construct-alphabet.py > alphabet.txt
+```
+
+Once created the alphabet.txt is used to filter all the increasing
+words with the following command
+
+```shell
+cat words.txt | ./increasing-words.rb
+```
+
 [words]: https://raw.github.com/dvberkel/letter-soup/master/words.txt
