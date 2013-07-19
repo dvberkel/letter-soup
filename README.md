@@ -54,7 +54,10 @@ Records
 <table>
   <tr><th>Commit</th><th>Alphabet</th><th>#increasing words</th></tr>
   <tr><td>[2ce4222][]</td><td>JQMPBFCUWHOVATRLKIZNEXDGSY</td><td>3203</td></tr>
+  <tr><td>[febdf95][]</td><td>JQMPBFCUWHOVARLTKIZNEXDGSY</td><td>3248</td></tr>
 </table>
 
+
 [words]: https://raw.github.com/dvberkel/letter-soup/master/words.txt
+[febdf95]: https://github.com/dvberkel/letter-soup/blob/febdf9500d333c70a2a2b0e28c03c6e9872e0eba/increasing.txt
 [2ce4222]: https://github.com/dvberkel/letter-soup/blob/2ce42220ec8ef0001e89db2461ef0754069d11ad/increasing.txt
