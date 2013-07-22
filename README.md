@@ -55,6 +55,7 @@ Records
   <tr><th>Commit</th><th>Alphabet</th><th>#increasing words</th></tr>
   <tr><td><a href="https://github.com/dvberkel/letter-soup/blob/2ce42220ec8ef0001e89db2461ef0754069d11ad/increasing.txt">2ce4222</a></td><td>JQMPBFCUWHOVATRLKIZNEXDGSY</td><td>3203</td></tr>
   <tr><td><a href="https://github.com/dvberkel/letter-soup/blob/febdf9500d333c70a2a2b0e28c03c6e9872e0eba/increasing.txt">febdf95</a></td><td>JQMPBFCUWHOVA<strong>RLT</strong>KIZNEXDGSY</td><td>3248</td></tr>
+  <tr><td><a href="https://github.com/dvberkel/letter-soup/blob/f6a8c3276dcaad87b5bf63a92c013d48769544e6/increasing.txt">f6a8c32</a></td><td>JQMPBFCUWHOVAR<strong>TL</strong>KIZNEXDGSY</td><td>3248</td></tr>
 </table>
 
 
