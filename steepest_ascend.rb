@@ -43,20 +43,29 @@ File.open('words.txt').each_line do |line|
   words << line.chomp
 end
 
-increasing = words.select { |word| alphabet.increasing?(word) }
-target = increasing.length
+100.times do
+  increasing = words.select { |word| alphabet.increasing?(word) }
+  target = increasing.length
+  old_target = target
 
-best_candidate = alphabet
-alphabet.candidates do |candidate|
-  increasing = words.select { |word| candidate.increasing?(word) }
-  if increasing.length > target then
-    best_candidate = candidate
-    target = increasing.length
+  best_candidate = alphabet
+  alphabet.candidates do |candidate|
+    increasing = words.select { |word| candidate.increasing?(word) }
+    if increasing.length > target then
+      best_candidate = candidate
+      target = increasing.length
+      if debug then
+        puts best_candidate
+        puts target
+      end
+    end
+  end
+  if target > old_target then
+    alphabet = best_candidate
     if debug then
-      puts best_candidate
-      puts target
+      puts ">#{alphabet}<"
     end
   end
 end
 
-puts "#{best_candidate}"
+puts ">>#{alphabet}<<"
