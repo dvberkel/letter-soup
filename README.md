@@ -59,8 +59,4 @@ Records
   <tr><td><a href="https://github.com/dvberkel/letter-soup/blob/f6ce2bc42d72a96fdf5ceab4f66ccfd23c173645/increasing.txt">f6ce2bc</a></td><td>JQMPBFCWHOVAURTLKINZXEDGYS</td><td>3660</td><td>local maximum</td></tr>
 </table>
 
-f6ce2bc42d72a96fdf5ceab4f66ccfd23c173645
-
 [words]: https://raw.github.com/dvberkel/letter-soup/master/words.txt
-[febdf95]: https://github.com/dvberkel/letter-soup/blob/febdf9500d333c70a2a2b0e28c03c6e9872e0eba/increasing.txt
-[2ce4222]: https://github.com/dvberkel/letter-soup/blob/2ce42220ec8ef0001e89db2461ef0754069d11ad/increasing.txt
