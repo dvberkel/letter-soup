@@ -37,21 +37,16 @@ class Alphabet
 end
 
 debug = true
+alphabet = Alphabet.new("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").shuffle.join)
 
-alphabet = nil
-File.open('alphabet.txt').each_line do |line|
-  alphabet = Alphabet.new(line.chomp)
-end
+puts "[#{alphabet}]"
 
 words = [];
 File.open('words.txt').each_line do |line|
   words << line.chomp
 end
 
-puts Alphabet.new("abc") == Alphabet.new("abc")
-puts Alphabet.new("abc") == Alphabet.new("bca")
-
-0.times do
+begin
   increasing = words.select { |word| alphabet.increasing?(word) }
   target = increasing.length
   old_target = target
@@ -74,6 +69,6 @@ puts Alphabet.new("abc") == Alphabet.new("bca")
       puts ">#{alphabet}<"
     end
   end
-end
+end while target != old_target
 
 puts ">>#{alphabet}<<"
