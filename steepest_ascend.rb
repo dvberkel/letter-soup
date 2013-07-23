@@ -1,6 +1,7 @@
 #! /usr/bin/env ruby
 
 class Alphabet
+  attr_reader :alphabet
   def initialize(alphabet)
     @alphabet = alphabet
   end
@@ -29,6 +30,10 @@ class Alphabet
   def to_s()
     @alphabet
   end
+
+  def ==(other)
+    @alphabet == other.alphabet
+  end
 end
 
 debug = true
@@ -43,7 +48,10 @@ File.open('words.txt').each_line do |line|
   words << line.chomp
 end
 
-100.times do
+puts Alphabet.new("abc") == Alphabet.new("abc")
+puts Alphabet.new("abc") == Alphabet.new("bca")
+
+0.times do
   increasing = words.select { |word| alphabet.increasing?(word) }
   target = increasing.length
   old_target = target
