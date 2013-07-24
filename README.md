@@ -78,11 +78,12 @@ alphabet and start a steeperst ascend from there.
 
 <table>
   <tr><th>Start</th><th>Finish</th><th>#increasing words</th><th>Notes</th></tr>
-  <tr><td>JQMPBFCUWHOVARTLKIZNEXDGSY</td><td>JQMPBFCWHOVAURTLKINZXE</td><td>3660</td><td>Record</  <tr><td>ABCDEFGHIJKLMNOPQRSTUVWXYZ</td><td>ABCDFGHJKELMOINPQURTVWSXZY</td><td>1488</td><td></td></tr>
+  <tr><td>JQMPBFCUWHOVARTLKIZNEXDGSY</td><td>JQMPBFCWHOVAURTLKINZXEDGYS</td><td>3660</td><td>Record</td></tr>
+  <tr><td>ABCDEFGHIJKLMNOPQRSTUVWXYZ</td><td>ABCDFGHJKELMOINPQURTVWSXZY</td><td>1488</td><td></td></tr>
   <tr><td>SCIWYUNVDLGBTREMJFKXZHPAQO</td><td>SCWYUINVDBGTLERMJAKFXZPHQO</td><td>679</td><td></td></tr>
   <tr><td>KVPLGYFWBUHORQTMSAIJCXEDZN</td><td>KVPGFLWYBHOURQATMINSJCEXDZ</td><td>1812</td><td></td></tr>
   <tr><td>PKCYVTNQGDMAESXUJOBFRIHLWZ</td><td>PKCYVNTQADGMESXJURBOWFHILZ</td><td>702</td><td></td></tr>
- <tr><td>NVKUHMPBJWDRLIYSCGXQAEFZOT</td><td>NVKHMPBJWURIDLSCGXYQEAFZOT</td><td>858</td><td></td></tr>
+  <tr><td>NVKUHMPBJWDRLIYSCGXQAEFZOT</td><td>NVKHMPBJWURIDLSCGXYQEAFZOT</td><td>858</td><td></td></tr>
   <tr><td>PAEHSCINMWZVKJGRTOQFYXULDB</td><td>PSECWHAINMZVKGJORTQFXYULDB</td><td>1019</td><td></td></tr>
   <tr><td>KMWRHNJGZCYBAIULDPOFXETQVS</td><td>KMWGRHNJZCAYUBILODPFXETQVS</td><td>1655</td><td></td></tr>
   <tr><td>YSXOGKQCAHPULWEJNDFIZBVMRT</td><td>YSXGKQCPOWHAULJINEDFZRBVMT</td><td>1388</td><td></td></tr>
@@ -96,7 +97,7 @@ alphabet and start a steeperst ascend from there.
   <tr><td>BDGLCZFRIYJATXMEQNKHSOPUWV</td><td>BDGCLZFYRJAXITMEQNKHOWUPVS</td><td>1342</td><td></td></tr>
   <tr><td>CUJTBVLYWMRODGXPAKZNSEFQIH</td><td>CJTBVLWYUMOARDGXPKZENFSQHI</td><td>1422</td><td></td></tr>
   <tr><td>ZTBKXCJOYVPRQWIAUFDENLSGHM</td><td>ZTBKXCJVOYPRAQWUFINDGLESHM</td><td>1998</td><td></td></tr>
-  <tr><td>XRPIHOBEJTUQYMNAKGDCSFLZWV</td><td></td>XPBRHJOUTEQMAYINKGLDCFZWVS<td>1645</td><td></td></tr>
+  <tr><td>XRPIHOBEJTUQYMNAKGDCSFLZWV</td><td>XPBRHJOUTEQMAYINKGLDCFZWVS</td><td>1645</td><td></td></tr>
 </table>
 
 [words]: https://raw.github.com/dvberkel/letter-soup/master/words.txt
