@@ -37,38 +37,48 @@ class Alphabet
 end
 
 debug = true
-alphabet = Alphabet.new("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").shuffle.join)
 
-puts "[#{alphabet}]"
+f = File.open('results.txt', 'a')
 
-words = [];
-File.open('words.txt').each_line do |line|
-  words << line.chomp
-end
+while true do
+  alphabet = Alphabet.new("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").shuffle.join)
 
-begin
-  increasing = words.select { |word| alphabet.increasing?(word) }
-  target = increasing.length
-  old_target = target
+  f.write("#{alphabet}:")
 
-  best_candidate = alphabet
-  alphabet.candidates do |candidate|
-    increasing = words.select { |word| candidate.increasing?(word) }
-    if increasing.length > target then
-      best_candidate = candidate
-      target = increasing.length
-      if debug then
-        puts best_candidate
-        puts target
+  puts "[#{alphabet}]"
+
+  words = [];
+  File.open('words.txt').each_line do |line|
+    words << line.chomp
+  end
+
+  begin
+    increasing = words.select { |word| alphabet.increasing?(word) }
+    target = increasing.length
+    old_target = target
+
+    best_candidate = alphabet
+    alphabet.candidates do |candidate|
+      increasing = words.select { |word| candidate.increasing?(word) }
+      if increasing.length > target then
+        best_candidate = candidate
+        target = increasing.length
+        if debug then
+          puts best_candidate
+          puts target
+        end
       end
     end
-  end
-  if target > old_target then
-    alphabet = best_candidate
-    if debug then
-      puts ">#{alphabet}<"
+    if target > old_target then
+      alphabet = best_candidate
+      if debug then
+        puts ">#{alphabet}<"
+      end
     end
-  end
-end while target != old_target
+  end while target != old_target
 
-puts ">>#{alphabet}<<"
+  puts ">>#{alphabet}<<"
+
+  f.write("#{alphabet}:#{target}\n")
+  f.flush()
+end
