@@ -10,18 +10,25 @@ import java.util.Set;
 public class BronKerbosch {
 	public static <T> List<Set<T>> maximalCliques(Map<T, Set<T>> neighbours) {
 		List<Set<T>> result = new ArrayList<Set<T>>();
-		algorithm1(new HashSet<T>(), neighbours.keySet(), new HashSet<T>(), neighbours, result);
+		pivot(new HashSet<T>(), vertices(neighbours), new HashSet<T>(), neighbours, result);
 		return Collections.unmodifiableList(result);
 	}
+
+	private static <T> Set<T> vertices(Map<T, Set<T>> neighbours) {
+		Set<T> vertices = new HashSet<T>();
+		vertices.addAll(neighbours.keySet());
+		return vertices;
+	}
 	
-	private static <T> void algorithm1(Set<T> R, Set<T> P, Set<T> X, Map<T, Set<T>> neighbours, List<Set<T>> result) {
+	@SuppressWarnings("unused")
+	private static <T> void naive(Set<T> R, Set<T> P, Set<T> X, Map<T, Set<T>> neighbours, List<Set<T>> result) {
 		if (P.isEmpty() && X.isEmpty()) {
 			result.add(Collections.unmodifiableSet(R));
 		}
 		while (!P.isEmpty()) {
 			T vertex = pickFrom(P);
 			Set<T> neighbourhood = neighbours.get(vertex);
-			algorithm1(union(R, vertex), intersection(P, neighbourhood), intersection(X, neighbourhood), neighbours, result);
+			naive(union(R, vertex), intersection(P, neighbourhood), intersection(X, neighbourhood), neighbours, result);
 			P.remove(vertex);
 			X.add(vertex);			
 		}
@@ -51,4 +58,27 @@ public class BronKerbosch {
 		result.retainAll(B);
 		return result;
 	}
+	
+	private static <T> Set<T> minus(Set<T> A, Set<T> B) {
+		Set<T> result = new HashSet<T>();
+		result.addAll(A);
+		result.removeAll(B);
+		return result;
+	}
+	
+	private static <T> void pivot(Set<T> R, Set<T> P, Set<T> X, Map<T, Set<T>> neighbours, List<Set<T>> result) {
+		if (P.isEmpty() && X.isEmpty()) {
+			result.add(Collections.unmodifiableSet(R));
+		} else {
+			T pivot = pickFrom(union(P,X));
+			Set<T> candidates = minus(P, neighbours.get(pivot));
+			for (T vertex : candidates) {
+				Set<T> neighbourhood = neighbours.get(vertex);
+				pivot(union(R, vertex), intersection(P, neighbourhood), intersection(X, neighbourhood), neighbours, result);
+				P.remove(vertex);
+				X.add(vertex);			
+			}
+		}
+	}
+
 }

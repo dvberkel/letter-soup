@@ -1,5 +1,6 @@
 package org.effrafax.lettersoup.graph;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -40,6 +41,6 @@ public class Graph<T> {
 	}
 
 	public List<Set<T>> maximalCliques() {
-		return BronKerbosch.maximalCliques(neighbours);
+		return BronKerbosch.maximalCliques(Collections.unmodifiableMap(neighbours));
 	}
 }
