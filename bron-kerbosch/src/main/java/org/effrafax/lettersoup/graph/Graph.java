@@ -2,8 +2,11 @@ package org.effrafax.lettersoup.graph;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import org.effrafax.lettersoup.graph.clique.BronKerbosch;
 
 
 public class Graph<T> {
@@ -25,6 +28,9 @@ public class Graph<T> {
 	
 
 	public void addEdge(T u, T v) {
+		if(!contains(u) || !contains(v)) {
+			throw new IllegalArgumentException("one of arguments is not a vertex.");
+		}
 		neighboursOf(u).add(v);
 		neighboursOf(v).add(u);
 	}
@@ -33,4 +39,7 @@ public class Graph<T> {
 		return neighbours.get(vertex);
 	}
 
+	public List<Set<T>> maximalCliques() {
+		return BronKerbosch.maximalCliques(neighbours);
+	}
 }

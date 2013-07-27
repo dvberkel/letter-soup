@@ -42,4 +42,13 @@ public class GraphTest {
 		assertThat(completeGraph, is(notNullValue()));
 	}
 
+	@Test(expected=IllegalArgumentException.class)
+	public void shouldNotBeAbleToAddAnEdgeForNonExistingVertex() {
+		Graph<Word> graph = new Graph<Word>();
+		
+		graph.addVertex(new Word("ABBOT"));
+		
+		graph.addEdge(new Word("ABBOT"), new Word("RICE"));
+	}
+
 }
