@@ -1,16 +1,11 @@
 package org.effrafax.lettersoup.graph.clique;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class BronKerbosch {
 	public static <T> List<Set<T>> maximalCliques(Map<T, Set<T>> neighbours) {
 		List<Set<T>> result = new ArrayList<Set<T>>();
-		pivot(new HashSet<T>(), vertices(neighbours), new HashSet<T>(), neighbours, result);
+		degeneracy(new HashSet<T>(), vertices(neighbours), new HashSet<T>(), neighbours, result);
 		return Collections.unmodifiableList(result);
 	}
 
@@ -80,5 +75,35 @@ public class BronKerbosch {
 			}
 		}
 	}
+
+    private static <T> void degeneracy(Set<T> R, Set<T> P, Set<T> X, Map<T, Set<T>> neighbours, List<Set<T>> result) {
+        for (T vertex : degeneracyOrder(neighbours)) {
+            Set<T> neighbourhood = neighbours.get(vertex);
+            pivot(union(R, vertex), intersection(P, neighbourhood), intersection(X, neighbourhood), neighbours, result);
+            P.remove(vertex);
+            X.add(vertex);
+        }
+    }
+
+    private static <T> List<T> degeneracyOrder(Map<T, Set<T>> neighbours) {
+        List<T> degeneracyOrder = new ArrayList<T>();
+        degeneracyOrder.addAll(neighbours.keySet());
+        Collections.sort(degeneracyOrder, new DegeneracyOrderComparator<T>(neighbours));
+        return degeneracyOrder;
+    }
+}
+
+class DegeneracyOrderComparator<T> implements Comparator<T> {
+
+    private Map<T, Set<T>> neighbours;
+
+    public DegeneracyOrderComparator(Map<T, Set<T>> neighbours) {
+        this.neighbours = neighbours;
+    }
+
+    @Override
+    public int compare(T u, T v) {
+        return neighbours.get(u).size() - neighbours.get(v).size();
+    }
 
 }
